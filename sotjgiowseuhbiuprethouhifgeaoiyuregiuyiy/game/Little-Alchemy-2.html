@@ -1,0 +1,181 @@
+<head>
+  <link rel='stylesheet' href='/css/main.css'>
+  <title>Neon Games.io</title>
+  <script src="/particles.js"></script>
+  <script>
+    loadGameOptions('all');
+  const game = {
+  "url": "/gms/little-alchemy-2/",
+  "image": "/img/little-alchemy-2.png",
+  "title": "Little Alchemy 2",
+  "Categories": [
+    "Puzzle"
+  ]
+};
+
+  var name = game.title;
+  var gameURL = game.url;
+  var gameimage = game.image;
+  localStorage.setItem('Title', name);
+  localStorage.setItem('gameURL', gameURL);
+  localStorage.setItem('gameimage', gameimage);
+
+  document.addEventListener('DOMContentLoaded', function() {
+  loadGameOptions('all');
+  });
+
+
+  </script>
+</head>
+<body>
+  <script src="/js/games.js"></script>
+  <div id="particles-js"></div>
+  <script src="/js/app.js"></script>
+  <script src="/game/game.js"></script>
+  <div class='sideNav'>
+    <img class="logo" src="/logo.png">
+    <br>
+    <a href="/">
+      <img class='sideSVG grow' src="/svg/home.svg">
+      <h1 class="sideName">Home</h1>
+      <br>
+    </a>
+    <a href="/allgames">
+      <p class='sideEmoji grow'>&#127918;</p>
+      <h1 class="sideName">All</h1>
+      <br>
+    </a>
+    <a href="/new">
+      <p class='sideEmoji grow'>&#x2728;</p>
+      <h1 class="sideName">New</h1>
+      <br>
+    </a>
+    <a href="/recent">
+      <p class='sideEmoji fullrotate'>&#128337;</p>
+      <h1 class="sideName">Recent</h1>
+      <br>
+    </a>
+    <a href="/popular">
+      <img class='sideSVG grow' src="/svg/badge.svg">
+      <h1 class="sideName">Popular</h1>
+      <br>
+    </a>
+    <a href="/multiplayer">
+      <p class='sideEmoji grow'>&#128101;</p>
+      <h1 class="sideName">Multiplayer</h1>
+      <br>
+    </a>
+    <hr>
+    <a href="/action">
+      <p class='sideEmoji grow fullrotate'>&#x2694;</p>
+      <h1 class="sideName">Action</h1>
+      <br>
+    </a>
+    <a href="/adventure">
+      <p class='sideEmoji grow fullrotate'>&#129517;</p>
+      <h1 class="sideName">Adventure</h1>
+      <br>
+    </a>
+    <a href="/car">
+      <img class='sideSVG grow' src="/svg/racing.svg">
+      <h1 class="sideName">Car</h1>
+      <br>
+    </a>
+    <a href="/casual">
+      <img class='sideSVG grow' src="/svg/casual.svg">
+      <h1 class="sideName">Casual</h1>
+      <br>
+    </a>
+    <a href="/clicker">
+      <p class='sideEmoji fullrotate grow'>&#128070;</p>
+      <h1 class="sideName">Clicker</h1>
+      <br>
+    </a>
+    <a href="/flash">
+      <img class='sideSVG grow' src="/svg/flash.svg">
+      <h1 class="sideName">Flash</h1>
+      <br>
+    </a>
+    <a href="/horror">
+      <p class='sideEmoji grow'>&#x1F494;</p>
+      <h1 class="sideName">Horror</h1>
+      <br>
+    </a>
+    <a href="/io">
+      <img class='sideSVG fullrotate' src="/svg/io.svg">
+      <h1 class="sideName">.io Games</h1>
+      <br>
+    </a>
+    <a href="/parkour">
+      <p class='sideEmoji grow'>&#x1F525;</p>
+      <h1 class="sideName">Parkour</h1>
+      <br>
+    </a>
+    <a href="/puzzle">
+      <p class='sideEmoji grow fullrotate'>&#129513;</p>
+      <h1 class="sideName">Puzzle</h1>
+      <br>
+    </a>
+    <a href="/shooter">
+      <img class='sideSVG fullrotate' src="/svg/target.svg">
+      <h1 class="sideName">Shooter</h1>
+      <br>
+    </a>
+    <a href="/sports">
+      <p class='sideEmoji grow fullrotate'>&#127944;</p>
+      <h1 class="sideName">Sports</h1>
+      <br>
+    </a>
+    <a href="/stickman">
+      <img class='sideSVG fullrotate grow' src="/svg/stickman.svg">
+      <h1 class="sideName">Stickman</h1>
+      <br>
+    </a>
+    <div class="adNav">
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7431909844582259" crossorigin="anonymous"></script>
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7431909844582259" data-ad-slot="2559919348" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+  </div>
+  <script>
+    loadGameOptions('all');
+    document.addEventListener('DOMContentLoaded', function() {
+      loadGameOptions('all')
+      document.addEventListener("pageContentLoaded", () => {
+        loadGameOptions('all')
+      });
+    });
+    document.addEventListener("pageContentLoaded", () => {
+      loadGameOptions('all')
+    });
+  </script>
+  <div class="topSearch">
+    <input class="Search" type="text" id="gameSearch" placeholder="Search games..." />
+    <br>
+  </div>
+  <div id="results"></div>
+  <div id='main'>
+
+
+
+        <div id="scroll" class="scroll"></div>
+        <script src="/game/game.js"></script>
+        <div class="frameCenter"><div class="frame" id="frame">
+          <iframe src="" id="gameframe_frame_container" class="game_frame"></iframe>
+            <div class="gameUIbar">
+              <h1 id="gmsName" class="gmsName"></h1>
+              <span style="float: right;" class="gamesicon" onclick="fullscreen();"><img class="gameUIbutton" src="/svg/ui/fullscreen.svg"></span>
+            <span style="float: right;" class="gamesicon" onclick="cloak();"><img class="gameUIbutton" src="/svg/ui/cloak.svg"></span>
+            </div>
+        </div></div> <center>
+        <script src="/js/games.js"></script>
+        
+        <div id="gamesMain"></div>
+      </center>
+    <script src="/game/game.js"></script>
+    </div>
+
+  <script src="/js/csr.js"></script>
+</body>
