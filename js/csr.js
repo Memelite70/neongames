@@ -6,7 +6,7 @@ function initSite() {
 
   document.body.addEventListener("click", e => {
     const link = e.target.closest("a");
-    if (!link || link.target === "_blank" || link.hasAttribute("download")) return;
+    if (!link || link.className=='gameframe_game nocsr' || link.target === "_blank" || link.hasAttribute("download")) return;
 
     const href = link.getAttribute("href");
     if (!href.startsWith("/")) return;

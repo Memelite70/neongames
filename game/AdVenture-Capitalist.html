@@ -13,14 +13,13 @@
     "Popular"
   ]
 };
-  if(game.image !== localStorage.getItem('gameImage')){  var name = game.title;
-                                                      var gameURL = game.url;
-                                                      var gameimage = game.image;
-                                                      localStorage.setItem('Title', name);
-                                                      localStorage.setItem('gameURL', gameURL);
-                                                      localStorage.setItem('gameimage', gameimage);
-                                                      window.location.href=''}
 
+  var name = game.title;
+  var gameURL = game.url;
+  var gameimage = game.image;
+  localStorage.setItem('Title', name);
+  localStorage.setItem('gameURL', gameURL);
+  localStorage.setItem('gameimage', gameimage);
 
   document.addEventListener('DOMContentLoaded', function() {
   loadGameOptions('all');
@@ -165,15 +164,15 @@
         <div id="scroll" class="scroll"></div>
         <script src="/game/game.js"></script>
         <div class="frameCenter"><div class="frame" id="frame">
-          <iframe src="" id="gameframe_frame_container" class="game_frame"></iframe>
+          <iframe src="/loader.html?game=/gms/adventure-capitalist/" id="gameframe_frame_container" class="game_frame"></iframe>
             <div class="gameUIbar">
-              <h1 id="gmsName" class="gmsName"></h1>
+              <h1 id="gmsName" class="gmsName">AdVenture Capitalist</h1>
               <span style="float: right;" class="gamesicon" onclick="fullscreen();"><img class="gameUIbutton" src="/svg/ui/fullscreen.svg"></span>
             <span style="float: right;" class="gamesicon" onclick="cloak();"><img class="gameUIbutton" src="/svg/ui/cloak.svg"></span>
             </div>
         </div></div> <center>
         <script src="/js/games.js"></script>
-        
+
         <div id="gamesMain"></div>
       </center>
     <script src="/game/game.js"></script>

@@ -1291,19 +1291,11 @@ function loadGameOptions(e) {
     t.innerHTML = "";
     const a = e ? e.toLowerCase() : "all";
     n = "all" === a ? [...gamesList] : "new" === a ? gamesList.slice(-20) : "recent" === a ? JSON.parse(localStorage.getItem("recentGames")) || [] : gamesList.filter((e => Array.isArray(e.Categories) && e.Categories.some((e => e.toLowerCase() === a)))), n.sort(((e, t) => e.title.toLowerCase().localeCompare(t.title.toLowerCase()))), n.forEach((e => {
-        const n = document.createElement("a");
+        const n = document.createElement("div");
+        n.className = "gameframe_game", n.setAttribute("onclick", `loadgame('${e.url}');`);
       var z1 = e.title.replace(/\s+/g, '-') + '';
         var z = z1.replace('---', '-');
-      n.href = `/game/${z}`;
-      n.addEventListener('click', function(event){
-        localStorage.setItem('gameimage', e.image);
-        event.preventDefault();
-      });
-        n.className = "gameframe_game", n.setAttribute("onclick", `loadgame('${e.url}');     localStorage.setItem('gameimage', ${e.image});`);
-      var z1 = e.title.replace(/\s+/g, '-') + '';
-        var z = z1.replace('---', '-');
-      n.href = `/game/${z}`;
-
+      n.dataset.a_href = `/game/${z}.html`;
         const a = document.createElement("img");
         a.setAttribute("onclick", "localStorage.setItem('gameimage', this.src);"), a.setAttribute("loading", "lazy"), a.src = e.image || "./globe.svg", a.onerror = function() {
             this.src = "./globe.svg"
