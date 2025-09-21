@@ -23,6 +23,12 @@
         if(param.includes('/gms/')){
           param = param.replace('/gms/', 'https://games.neongames.io/');
         }
+        if(param.includes('./static/')){
+          param = param.replace('./static/', 'https://prox.neongames.io/static/');
+        }
+        else if(param.includes('/static/')){
+          param = param.replace('/static/', 'https://prox.neongames.io/static/');
+        }
         var gameframe = document.createElement("iframe");
         gameframe.className = "game_frame";
         gameframe.src = '/loader2.html?game=' + param;
