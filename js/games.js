@@ -1290,19 +1290,46 @@ function loadGameOptions(e) {
     let n;
     t.innerHTML = "";
     const a = e ? e.toLowerCase() : "all";
-    n = "all" === a ? [...gamesList] : "new" === a ? gamesList.slice(-20) : "recent" === a ? JSON.parse(localStorage.getItem("recentGames")) || [] : gamesList.filter((e => Array.isArray(e.Categories) && e.Categories.some((e => e.toLowerCase() === a)))), n.sort(((e, t) => e.title.toLowerCase().localeCompare(t.title.toLowerCase()))), n.forEach((e => {
-        const n = document.createElement("div");
-        n.className = "gameframe_game", n.setAttribute("onclick", `loadgame('${e.url}');`);
-      var z1 = e.title.replace(/\s+/g, '-') + '';
-        var z = z1.replace('---', '-');
-      n.dataset.a_href = `/game/${z}.html`;
-        const a = document.createElement("img");
-        a.setAttribute("onclick", "localStorage.setItem('gameimage', this.src);"), a.setAttribute("loading", "lazy"), a.src = e.image || "./globe.svg", a.onerror = function() {
-            this.src = "./globe.svg"
+    n = "all" === a ? [...gamesList] : "new" === a ? gamesList.slice(-20) : "recent" === a ? JSON.parse(localStorage.getItem("recentGames")) || [] : gamesList.filter((e => Array.isArray(e.Categories) && e.Categories.some((e => e.toLowerCase() === a)))), n.sort(((e, t) => e.title.toLowerCase().localeCompare(t.title.toLowerCase()))), n.forEach((e, i) => {
+        const gameDiv = document.createElement("div");
+        gameDiv.className = "gameframe_game";
+        gameDiv.setAttribute("onclick", `loadgame('${e.url}');`);
+        const img = document.createElement("img");
+        img.setAttribute("onclick", "localStorage.setItem('gameimage', this.src);");
+        img.setAttribute("loading", "lazy");
+        img.src = e.image || "./globe.svg";
+        img.onerror = function () {
+            this.src = "./globe.svg";
         };
-        const o = document.createElement("h1");
-        o.className = "rotating-text", o.style.marginBottom = "4px", o.textContent = e.title, n.appendChild(a), n.appendChild(o), n.appendChild(document.createElement("br")), t.appendChild(n)
-    }))
+        const title = document.createElement("h1");
+        title.className = "rotating-text";
+        title.style.marginBottom = "4px";
+        title.textContent = e.title;
+        gameDiv.appendChild(img);
+        gameDiv.appendChild(title);
+        gameDiv.appendChild(document.createElement("br"));
+        t.appendChild(gameDiv);
+        if ((i + 1) % 5 === 0) {
+            const adWrapper = document.createElement("div");
+            adWrapper.className = "adsense-wrapper";
+            adWrapper.innerHTML = `
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7431909844582259"
+     crossorigin="anonymous"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7431909844582259"
+     data-ad-slot="8801020295"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+            `;
+            t.appendChild(adWrapper);
+        }
+    })
 }
 
 function loadgame(e, t) {

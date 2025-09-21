@@ -422,3 +422,6 @@ border-radius: 6px;
 .rotatetrack .gameframe_game img{
   border-radius: 1em;
 }
+#preload-ad-container{
+  min-height: 450px !important;
+}
