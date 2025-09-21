@@ -1351,7 +1351,7 @@ function loadgame(e, t) {
         image: a.querySelector("img").src,
         Categories: []
     }), history.pushState({}, null, `/game/${s}`);
-    const l = localStorage.getItem("noS");
+    const l = localStorage.getItem("noS");/*
     var r;
     (r = `/game/${l}.html`, fetch(r).then((e => {
         if (!e.ok) throw new Error("Network response was not ok");
@@ -1368,6 +1368,8 @@ function loadgame(e, t) {
             }), 300))
         }
     })).catch((e => console.error("Error fetching /game/ content:", e)))
+  */
+  window.location.href = s;
 }
 
 function positionResultsBox() {
