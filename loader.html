@@ -25,7 +25,7 @@
         }
         var gameframe = document.createElement("iframe");
         gameframe.className = "game_frame";
-        gameframe.src = param;
+        gameframe.src = '/loader2.html?game=' + param;
         gameframe.style.opacity = "0";
         gameframe.style.display = "block";
         document.body.appendChild(gameframe);
