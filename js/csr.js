@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", initSite);
 
 function initSite() {
+    gtagLoad();
   const mainEl = document.querySelector("#main");
   const preloadCache = new Map();
 
@@ -221,3 +222,28 @@ function checkAndOpenPopup(href) {
     document.dispatchEvent(adFinishedEvent);
   }
 }
+
+
+function gtagLoad(){
+var script = document.getElementById('gtagJsEmbed');
+  if(!script){
+    script = document.createElement('script');
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-ZE23DV3Y6R';
+    script.id="gtagJsEmbed";
+          script.async = true;
+
+           document.head.appendChild(script);
+
+
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+
+          gtag('config', 'G-ZE23DV3Y6R');
+          console.log('Google Analytics Loaded');
+  }
+  else{
+    console.log('duplicate called, Google Analytics already loaded')
+  }
+        }
