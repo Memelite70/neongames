@@ -207,7 +207,7 @@ function loadGameWithAd(href) {
 
 
 const POPUP_KEY = 'lastPopupTime';
-const MINUTES_BETWEEN_POPUPS = 0.5;
+const MINUTES_BETWEEN_POPUPS = 4;
 
 function checkAndOpenPopup(href) {
   const lastPopupTime = localStorage.getItem(POPUP_KEY);
