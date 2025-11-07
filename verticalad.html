@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Loader &middot; neongames.io</title>
+<style>
+    html,
+    body {
+        background-color: #4C3088;
+        margin: 0;
+        transition: opacity 1s;
+        overflow: hidden;
+    }
+
+    p {
+        color: black; 
+        font-size: 2em;
+        text-align: center; 
+        display: inline-block;
+  font: 800 6.25vh Arial;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 0.14vw;
+    }
+
+    .loading {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .dots::after {
+        content: ".";
+        animation: blink 1.62s infinite;
+    }
+
+    @keyframes blink {
+        0% { content: "."; }
+        33% { content: ".."; }
+        66% { content: "..."; }
+        100% { content: "."; }
+    }
+
+</style>
+<script>
+    function getUrlParameter(name) {
+        name = name.replace(/[[]/, '\$$[').replace(/[]$$]/, '\\]');
+        var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+        var results = regex.exec(location.search);
+        return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+    };
+
+const dots = document.getElementById("dots");
+    setTimeout(() => {
+        if (dots) { 
+  dots.className = "UsedToBeDots";
+} else {
+  console.error("Element with ID 'dots' not found.");
+}
+        const style = document.createElement('style');
+        style.innerHTML = `html::-webkit-scrollbar {display: none;}html {-ms-overflow-style: none; scrollbar-width: none; }`;
+            }, 3240);
+</script>
+</head>
+<body id="fade">
+        <center><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7431909844582259"
+     crossorigin="anonymous"></script>
+<!-- finna vertical ads -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:1200px"
+     data-ad-client="ca-pub-7431909844582259"
+     data-ad-slot="8008240731"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+        <div class="loading" style="text-align: center;">
+            <p>Loading<span id="dots" class="dots"></span></p>
+        </div> 
+
+    </center>
+</body>
+</html>
